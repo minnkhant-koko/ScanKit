@@ -12,8 +12,8 @@ android {
         release {
             storeFile file("scan_sample.jks")
             keyAlias "scan_sample"
-            keyPassword "scan_sample"
-            storePassword "scan_sample"
+            keyPassword "scansample"
+            storePassword "scansample"
             v1SigningEnabled true
             v2SigningEnabled true
         }
@@ -56,4 +56,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     // Huawei ရဲ့ Scan Kit
     implementation "com.huawei.hms:scan:1.2.1.300"
+    implementation 'com.google.code.gson:gson:2.8.6'
 }
