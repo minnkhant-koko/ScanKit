@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ScanKit</string>
+    <string name="menu_flashlight">Flashlight</string>
+    <string name="lbl_flashlight_on">Flashlight On</string>
+    <string name="lbl_flashlight_off">Flashlight Off</string>
+    <string name="menu_album">Album</string>
+    <string name="lbl_default_view">Default View</string>
+    <string name="lbl_customize_view">Customize View</string>
+    <string name="lbl_scan_now">Scan Now</string>
 </resources>
