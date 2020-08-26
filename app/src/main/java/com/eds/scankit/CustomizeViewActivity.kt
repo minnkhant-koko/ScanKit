@@ -89,6 +89,21 @@ class CustomizeViewActivity: AppCompatActivity() {
         remoteView.onResume()
     }
 
+    override fun onPause() {
+        super.onPause()
+        remoteView.onPause()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        remoteView.onStop()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        remoteView.onDestroy()
+    }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.custom_view_menu, menu)
         return true
@@ -134,21 +149,9 @@ class CustomizeViewActivity: AppCompatActivity() {
 
     private fun showResult(hmsResults : Array<HmsScan>) {
         Log.v(TAG, "Results ${GsonBuilder().setPrettyPrinting().create().toJson(hmsResults)}")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        remoteView.onPause()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        remoteView.onStop()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        remoteView.onDestroy()
+        if (hmsResults.isNotEmpty()) {
+            Toast.makeText(applicationContext, hmsResults[0].originalValue.toString(), Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
